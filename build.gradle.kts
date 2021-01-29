@@ -3,8 +3,25 @@ plugins {
     java
     id("org.springframework.boot") version "2.3.2.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
+    id("com.palantir.docker") version "0.22.1"
+    id("com.palantir.docker-run") version "0.22.1"
+}
+version = "1.0.0"
+docker {
+    name = "meelvin182/tree-aggregator:".plus(version)
+    uri("meelvin182/tree-aggregator:".plus(version))
+    tag("name", "tree-aggregator")
+    buildArgs(hashMapOf("name" to "tree-aggregator"))
+    copySpec.from("build").into("build")
+    pull(true)
+    setDockerfile(file("Dockerfile"))
 }
 
+dockerRun {
+    name = "tree-aggregator"
+    image = "meelvin182/tree-aggregator:".plus(version)
+    ports("8080:8080")
+}
 repositories {
     mavenCentral()
     mavenLocal()
