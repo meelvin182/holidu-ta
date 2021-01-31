@@ -1,7 +1,7 @@
 package com.holidu.interview.assignment.service;
 
 import com.holidu.interview.assignment.ApplicationTestBase;
-import com.holidu.interview.assignment.exceptions.NewYorkFetchingException;
+import com.holidu.interview.assignment.exceptions.NewYorkTreeFetchingException;
 import com.holidu.interview.assignment.model.TreeAggregationRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,7 +41,7 @@ class NewYorkTreeFetcherTest extends ApplicationTestBase {
     }
 
     @Test
-    public void getAggregationMapTest() throws NewYorkFetchingException {
+    public void getAggregationMapTest() throws NewYorkTreeFetchingException {
 
         Resource TEST_RESPONSE = resourceLoader.getResource("new_york_tree_response.json");
 

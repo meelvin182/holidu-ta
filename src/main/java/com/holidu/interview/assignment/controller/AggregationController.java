@@ -1,6 +1,6 @@
 package com.holidu.interview.assignment.controller;
 
-import com.holidu.interview.assignment.exceptions.NewYorkFetchingException;
+import com.holidu.interview.assignment.exceptions.NewYorkTreeFetchingException;
 import com.holidu.interview.assignment.model.TreeAggregationRequest;
 import com.holidu.interview.assignment.service.NewYorkTreeFetcher;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -28,7 +28,7 @@ public class AggregationController {
 
     @PostMapping("commonName")
     @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Tree aggregation")})
-    public ResponseEntity<Map<String, Integer>> aggregateTreeDataByCommonName(@RequestBody TreeAggregationRequest treeAggregationRequest) throws NewYorkFetchingException {
+    public ResponseEntity<Map<String, Integer>> aggregateTreeDataByCommonName(@RequestBody TreeAggregationRequest treeAggregationRequest) throws NewYorkTreeFetchingException {
         return ResponseEntity.ok(newYorkTreeFetcher.fetchTrees(treeAggregationRequest));
     }
 

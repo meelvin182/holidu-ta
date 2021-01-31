@@ -1,7 +1,7 @@
 package com.holidu.interview.assignment.service;
 
 import com.holidu.interview.assignment.config.EnvProperties;
-import com.holidu.interview.assignment.exceptions.NewYorkFetchingException;
+import com.holidu.interview.assignment.exceptions.NewYorkTreeFetchingException;
 import com.holidu.interview.assignment.model.Point;
 import com.holidu.interview.assignment.model.SearchBoundaries;
 import com.holidu.interview.assignment.model.Tree;
@@ -34,7 +34,7 @@ public class NewYorkTreeFetcher {
     private final EnvProperties envProperties;
     private final BoundariesProviderService boundariesProviderService;
 
-    public Map<String, Integer> fetchTrees(TreeAggregationRequest aggregationRequest) throws NewYorkFetchingException {
+    public Map<String, Integer> fetchTrees(TreeAggregationRequest aggregationRequest) throws NewYorkTreeFetchingException {
         String targetUrl = envProperties.getNYCTreeResource();
         SearchBoundaries searchBoundaries = boundariesProviderService.provideBoundaries(aggregationRequest);
         targetUrl = targetUrl.concat(buildAdditionalFilter(searchBoundaries));
@@ -49,7 +49,7 @@ public class NewYorkTreeFetcher {
                 );
 
         if (responseEntity.getStatusCode() != HttpStatus.OK || responseEntity.getBody() == null) {
-            throw new NewYorkFetchingException("Failed to download trees");
+            throw new NewYorkTreeFetchingException("Failed to download trees");
         }
 
         log.debug("Response entity = {}", responseEntity.getBody());
