@@ -1,5 +1,13 @@
 # Tree Radius Interview Assignment
 
+
+##How to run
+
+```
+./gradlew clean build docker dockerRun
+go to http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
+```
+
 Hi there! Congratulations on making it to the next step!
 
 You are given a scaffold application based on Spring Boot to save your time, but you are free to use any other

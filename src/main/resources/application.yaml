@@ -1,7 +1,12 @@
 server:
   port: 8080
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
 
 holidu:
   NYCTreeResource: https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=x_sp,y_sp,spc_common
   meterToFeetRatio: 3.28084
   filterTemplate: "&$where=y_sp <= %s AND y_sp >= %s AND x_sp <= %s AND x_sp >= %s"
+
+
