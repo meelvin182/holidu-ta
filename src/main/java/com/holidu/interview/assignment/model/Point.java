@@ -1,13 +1,13 @@
 package com.holidu.interview.assignment.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Value;
 
 import java.math.BigDecimal;
 
-@Data
 @AllArgsConstructor
+@Value
 public class Point {
-    private BigDecimal x;
-    private BigDecimal y;
+    BigDecimal x;
+    BigDecimal y;
 }

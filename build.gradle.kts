@@ -33,7 +33,9 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.16")
     implementation("org.springdoc:springdoc-openapi-ui:1.5.2")
 
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test"){
+      //  exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+    }
     testCompileOnly("org.projectlombok:lombok:1.18.16")
     testAnnotationProcessor("org.projectlombok:lombok:1.18.16")
 }
