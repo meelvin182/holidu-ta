@@ -1,7 +1,7 @@
 # Tree Radius Interview Assignment
 
 
-##How to run
+## How to run
 
 ```
 ./gradlew clean build docker dockerRun
