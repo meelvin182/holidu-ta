@@ -21,7 +21,7 @@ import static org.springframework.test.web.client.match.MockRestRequestMatchers.
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
-class NewYorkTreeFetcherTest extends ApplicationTestBase {
+class NewYorkTreeFetcherIntegrationTest extends ApplicationTestBase {
 
 
     @Autowired

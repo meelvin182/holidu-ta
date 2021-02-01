@@ -72,12 +72,12 @@ public class NewYorkTreeFetcher {
                 radius.compareTo(
                         getCartesianDistance(center, new Point(new BigDecimal(tree.getX_sp()), new BigDecimal(tree.getY_sp())))) < 0
         );
-
+        // return for tests
         return trees;
     }
 
 
-    public BigDecimal getCartesianDistance(Point p1, Point p2) {
+    private BigDecimal getCartesianDistance(Point p1, Point p2) {
         log.debug("calculating distance between p1= {} and p2= {}", p1, p2);
         double dx = p2.getX().subtract(p1.getX()).doubleValue();
         double dy = p2.getY().subtract(p1.getY()).doubleValue();
